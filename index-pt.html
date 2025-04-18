@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="theme-toggle" style="margin-bottom: 1rem;">
+        Mudar Tema
+    </button>
+    <button onclick="window.location.href='index.html'" style="margin-bottom: 1rem;">
+        This Page in English
+    </button>    
+    <h1>Meu Portfólio</h1>
+        <p>
+            Olá, meu nome é Micaias Oliveira.
+        </p>
+        <p>
+            Sou um programador iniciante em uma jornada para aprender e criar coisas legais.
+            Atualmente estudo no Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB),
+            mas grande parte do que aprendi veio de explorar projetos e assuntos por conta própria, além da sala de aula.
+        </p>
+
+        <h2>Sobre Mim</h2>
+        <p>
+            Sou apaixonado por entender como as coisas funcionam por trás dos panos.
+            Gosto de mexer com sistemas e explorar conceitos de programação de baixo nível, como compiladores e gerenciamento de memória.
+        </p>
+
+        <h2>Meus Projetos</h2>
+        <h3>Holi</h3>
+        <p>
+            Um jogo no estilo Tamagotchi onde você cuida de um bichinho virtual.
+        </p>
+        <p>
+            <strong>Tecnologias utilizadas:</strong> Java e LibGDX.
+        </p>
+
+        <h3>LBR</h3>
+        <p>
+            Uma linguagem de programação feita em Rust,
+            projetada para ajudar pessoas a aprenderem programação em português.
+        </p>
+        <p>
+            <strong>Tecnologias utilizadas:</strong> Rust. <br>
+            <strong>Inspirado por:</strong> Rust, Portugol, C e C++.
+        </p>
+
+        <h2>Explorando no momento:</h2>
+        <ul>
+            <li>Desenvolvimento backend</li>
+            <li>Rust</li>
+            <li>Java</li>
+            <li>Desenvolvimento de jogos (especialmente com Godot)</li>
+            <li>Compiladores</li>
+        </ul>
+
+        <h2>Contato</h2>
+        <p>
+            Você pode entrar em contato comigo pelo e-mail <a href="mailto:micaias.oliveira@academico.ifpb.edu.br">micaias.oliveira@academico.ifpb.edu.br</a><br>
+            ou conferir meu trabalho no <a href="https://github.com/Micaias32" target="_blank">GitHub</a>.
+        </p>
+
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+      
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          body.setAttribute('data-theme', 'dark');
+        }
+      
+        toggleButton.addEventListener('click', () => {
+          const isDark = body.getAttribute('data-theme') === 'dark';
+          if (isDark) {
+            body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+          } else {
+            body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+          }
+        });
+    </script>
+      
+</body>
+</html>

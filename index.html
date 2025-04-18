@@ -4,24 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="theme-toggle" style="margin-bottom: 1rem;">
+        Toggle Theme
+    </button>
+    <button onclick="window.location.href='index-pt.html'" style="margin-bottom: 1rem;">
+        Essa Página em Português
+    </button>    
     <h1>My Portfolio</h1>
     <p>
         Hi, I'm Micaias Oliveira.
     </p>
     <p>
         I'm a new programmer on a journey to learn and build cool things.
-        Currently exploring Rust, Java, and backend development.
+        I'm currently studying at the Federal Institute of Education, Science and Technology of Paraíba (IFPB),
+        but most of what I've learned comes from exploring projects and topics beyond the classroom.
+    </p>
+    <h2>About Me</h2>
+    <p>
+    I'm passionate about understanding how things work under the hood.
+    I love tinkering with systems, and exploring low-level programming concepts like compilers and memory management.
     </p>
     <h2>My Projects</h2>
+    <h3>Holi</h3>
+    <p>
+        A Tamagotchi-like game where you care for a virtual pet.
+    </p>
+    <p>
+        <strong>Technologies used:</strong> Java and LibGDX.
+    </p>
+    <h3>LBR</h3>
+    <p>
+        A programming language made in Rust,
+        designed to help people learn programming in Portuguese.
+    </p>
+    <p>
+        <strong>Technologies used:</strong> Rust. <br>
+        <strong>Inspired by:</strong> Rust, Portugol, C and C++.
+    </p>
+    <h2>Exploring now:</h2>
     <ul>
-      <li>
-        <strong>Holi</strong>: A Tamagotchi-like game where you care for a virtual pet.
-      </li>
-      <li>
-        <strong>LBR</strong>: A programming language made in Rust, designed to help people learn programming in Portuguese.
-      </li>
-    </ul>    
+        <li>Backend development</li>
+        <li>Rust</li>
+        <li>Java</li>
+        <li>Game development (especially Godot)</li>
+        <li>Compilers</li>
+    </ul>
+    <h2>Contact</h2>
+    <p>
+    You can reach me at <a href="mailto:micaias.oliveira@academico.ifpb.edu.br">micaias.oliveira@academico.ifpb.edu.br</a><br>
+    or check out my work on <a href="https://github.com/Micaias32" target="_blank">GitHub</a>.
+    </p>
+
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+      
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          body.setAttribute('data-theme', 'dark');
+        }
+      
+        toggleButton.addEventListener('click', () => {
+          const isDark = body.getAttribute('data-theme') === 'dark';
+          if (isDark) {
+            body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+          } else {
+            body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+          }
+        });
+    </script>
+      
 </body>
 </html>
